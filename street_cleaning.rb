@@ -79,7 +79,7 @@ if $PROGRAM_NAME == __FILE__
   cal = Icalendar::Calendar.new
   CleaningDay.one_year.each { |e| cal.add_event(e.to_ics) }
 
-  open('street_cleaning.ics', 'w') do |f|
+  open('calendar.ics', 'w') do |f|
     f.write cal.to_ical
   end
 end
