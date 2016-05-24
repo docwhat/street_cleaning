@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # frozen_string_literal: true
 # April 1st to Nov 30th
 # 4th Monday (north) and Tuesday (south)
