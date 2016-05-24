@@ -51,8 +51,8 @@ class CleaningDay
 
   def to_ics
     Icalendar::Event.new.tap do |event|
-      event.dtstart = Icalendar::Values::Time.new start, 'tzid' => TZID
-      event.dtend = Icalendar::Values::Time.new stop, 'tzid' => TZID
+      event.dtstart = Icalendar::Values::DateTime.new start, 'tzid' => TZID
+      event.dtend = Icalendar::Values::DateTime.new stop, 'tzid' => TZID
       event.summary = advice
     end
   end
