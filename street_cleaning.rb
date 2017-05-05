@@ -13,7 +13,7 @@ require 'icalendar/tzinfo'
 def set_time_on_date(date, time)
   parts = date.to_a
   time_parts = time.to_a
-  (0..2).each { |i| parts[i] = time_parts[i] }
+  (0..2).each { |digit| parts[digit] = time_parts[digit] }
   Time.local(*parts)
 end
 
