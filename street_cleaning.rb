@@ -24,7 +24,6 @@ class CleaningDay
   STOP_TIME  = Time.parse('2pm')
   DAYS_OF_WEEK = %w(Monday Tuesday).freeze
   MONTHS = %w(April May June July August September October November).freeze
-  TZID = 'America/New_York'.freeze
 
   def initialize(date)
     @start = set_time_on_date(date, START_TIME).freeze
@@ -51,8 +50,8 @@ class CleaningDay
 
   def to_ics
     Icalendar::Event.new.tap do |event|
-      event.dtstart = Icalendar::Values::DateTime.new start, 'tzid' => TZID
-      event.dtend = Icalendar::Values::DateTime.new stop, 'tzid' => TZID
+      event.dtstart = Icalendar::Values::DateTime.new start
+      event.dtend = Icalendar::Values::DateTime.new stop
       event.summary = advice
     end
   end
