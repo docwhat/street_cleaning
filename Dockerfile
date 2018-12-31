@@ -1,9 +1,10 @@
 # Docker multi-stage build file
 # Requires docker 17.05 or newer.
+FROM ruby:2.5 AS ruby
 
 ##
 ##
-FROM ruby:2.3 as builder
+FROM ruby AS builder
 
 WORKDIR /app
 
@@ -11,11 +12,13 @@ COPY Gemfile* ./
 RUN bundle install --frozen --deployment
 
 COPY *.rb ./
-RUN bundle exec street_cleaning.rb
+RUN bundle exec rubocop --verbose-version
+RUN bundle exec rubocop --format=tap
+RUN bundle exec ruby street_cleaning.rb
 
 ##
 ##
-FROM nginx:alpine
+FROM nginx:alpine AS release
 
 EXPOSE 80
 

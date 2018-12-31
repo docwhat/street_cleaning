@@ -1,5 +1,5 @@
-#!/usr/bin/env ruby
 # frozen_string_literal: true
+
 # April 1st to Nov 30th
 # 4th Monday (north) and Tuesday (south)
 # 8:30am to 2:00pm
@@ -22,8 +22,8 @@ class CleaningDay
   attr_reader :start, :stop
   START_TIME = Time.parse('8:30am')
   STOP_TIME  = Time.parse('2pm')
-  DAYS_OF_WEEK = %w(Monday Tuesday).freeze
-  MONTHS = %w(April May June July August September October November).freeze
+  DAYS_OF_WEEK = %w[Monday Tuesday].freeze
+  MONTHS = %w[April May June July August September October November].freeze
 
   def initialize(date)
     @start = set_time_on_date(date, START_TIME).freeze
@@ -37,7 +37,8 @@ class CleaningDay
   def street_side
     return 'North' if @start.monday?
     return 'South' if @start.tuesday?
-    fail "I don't know about #{day}"
+
+    raise "I don't know about #{day}"
   end
 
   def to_s
