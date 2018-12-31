@@ -1,0 +1,47 @@
+#!/bin/bash
+
+declare -r tag=${IMAGE_NAME:-street_cleaning:local}
+declare -r name="Street Cleaning Schedule"
+declare -r url="https://hub.docker.com/r/docwhat/street_cleaning"
+
+build_date="$(env TZ='America/New_York' date '+%Y-%m-%dT%H:%M:%SZ')"
+top_dir="$(git rev-parse --show-toplevel)"
+repo_url="$(git ls-remote --get-url)"
+branch="$(git rev-parse --abbrev-ref HEAD)"
+gitsha=${GIT_SHA1:-$(git rev-parse HEAD)}
+gitcommit=${GIT_COMMIT:-$(git log -1 --oneline --decorate)}
+
+declare -r \
+  build_date \
+  top_dir \
+  repo_url \
+  branch \
+  gitsha \
+  gitcommit
+
+cat <<INFO
+On ${build_date}
+We're building the image ${tag}
+From ${repo_url}#${branch} (${gitsha})
+===========================================================
+INFO
+
+declare -ra docker_build_args=(
+  "--build-arg=SITE_COMMIT=${gitcommit}"
+  "--build-arg=SITE_VERSION=${gitsha}"
+  "--target=release"
+  "--tag=${tag}"
+  "--pull"
+  "--label=maintainer=Christian Höltje <https://docwhat.org>"
+  "--label=org.label-schema.name=${name}"
+  "--label=org.label-schema.url=${url}"
+  "--label=org.label-schema.vcs-ref=${gitsha}"
+  "--label=org.label-schema.vcs-url=${repo_url}"
+  "--label=org.label-schema.build-date=${build_date}"
+  "--label=org.label-schema.schema-version=1.0"
+  "${top_dir}"
+)
+
+docker build "${docker_build_args[@]}"
+
+# EOF
