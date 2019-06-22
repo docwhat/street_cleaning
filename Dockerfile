@@ -31,6 +31,6 @@ COPY --from=builder /app/calendar.ics /usr/share/nginx/html/
 # Remove default index.html file.
 RUN rm -f /usr/share/nginx/html/index.html
 
-HEALTHCHECK --interval=5s --timeout=5s --retries=3 CMD wget localhost:8080/healthz -q -O - > /dev/null 2>&1
+HEALTHCHECK --interval=5s --timeout=5s CMD wget http://localhost/nginx-health -q -O - > /dev/null 2>&1
 
 # vim: ft=dockerfile :
