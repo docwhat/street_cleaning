@@ -20,5 +20,5 @@ gem 'icalendar', '~> 2.3'
 gem 'tzinfo'
 
 group :development do
-  gem 'rubocop', '~> 0.61.1'
+  gem 'rubocop', '~> 0.76.0'
 end
