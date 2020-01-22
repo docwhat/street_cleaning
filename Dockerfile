@@ -1,6 +1,6 @@
 # Docker multi-stage build file
 # Requires docker 17.05 or newer.
-FROM ruby:2.6 AS ruby
+FROM ruby:2.7.0 AS ruby
 
 ##
 ##
@@ -9,7 +9,9 @@ FROM ruby AS builder
 WORKDIR /app
 
 COPY Gemfile* ./
-RUN bundle install --frozen --deployment
+RUN bundle config set deployment true
+RUN bundle config set frozen true
+RUN bundle install
 
 COPY *.rb ./
 RUN bundle exec rubocop --verbose-version

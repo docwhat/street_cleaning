@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eu
+
+cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && cd ..
+
+ruby -e 'print open("Dockerfile").read.match(/^FROM ruby:([0-9.]+)/) { |matched| matched[1] }' >.ruby-version
+
+bundle install
+bundle binstubs --all --path=.bundle/bin
+
+# EOF
