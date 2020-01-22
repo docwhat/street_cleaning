@@ -27,8 +27,6 @@ From ${repo_url}#${branch} (${gitsha})
 INFO
 
 declare -ra docker_build_args=(
-  "--build-arg=SITE_COMMIT=${gitcommit}"
-  "--build-arg=SITE_VERSION=${gitsha}"
   "--target=release"
   "--tag=${tag}"
   "--pull"
