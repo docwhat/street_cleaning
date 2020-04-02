@@ -20,5 +20,7 @@ gem 'icalendar', '~> 2.3'
 gem 'tzinfo'
 
 group :development do
+  gem 'reek'
   gem 'rubocop', '~> 0.80.0'
+  gem 'solargraph'
 end

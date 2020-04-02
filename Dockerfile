@@ -1,6 +1,4 @@
-# Docker multi-stage build file
-# Requires docker 17.05 or newer.
-FROM ruby:2.7.0 AS ruby
+FROM ruby:2 AS ruby
 
 ##
 ##

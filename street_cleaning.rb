@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# spellchecker: disable
+
 # April 1st to Nov 30th
 # 4th Monday (north) and Tuesday (south)
 # 8:30am to 2:00pm
@@ -10,6 +12,7 @@ require 'time'
 require 'icalendar'
 require 'icalendar/tzinfo'
 
+# This method is a :reek:UtilityFunction
 def set_time_on_date(date, time)
   parts = date.to_a
   time_parts = time.to_a
@@ -61,6 +64,7 @@ class CleaningDay
     "<CleaningDay #{self}>"
   end
 
+  # :reek:TooManyStatements :reek:NestedIterators
   def self.one_year
     today = Date.today
     now = Time.local(today.year, today.month, 1)
