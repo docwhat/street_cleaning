@@ -23,6 +23,7 @@ end
 # A cleaning day event
 class CleaningDay
   attr_reader :start, :stop
+
   START_TIME = Time.parse('8:30am')
   STOP_TIME  = Time.parse('2pm')
   DAYS_OF_WEEK = %w[Monday Tuesday].freeze

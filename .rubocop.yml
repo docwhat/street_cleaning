@@ -12,6 +12,12 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: true
 
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
 Style/HashEachMethods:
   Enabled: true
 
@@ -19,4 +25,10 @@ Style/HashTransformKeys:
   Enabled: true
 
 Style/HashTransformValues:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/SlicingWithRange:
   Enabled: true
