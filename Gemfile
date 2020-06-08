@@ -14,13 +14,13 @@ source 'https://rubygems.org/'
 
 ruby detect_ruby_version
 
-gem 'activesupport', '~> 6.0.0'
+gem 'activesupport', '~> 6.0.3', '>= 6.0.3.1'
 gem 'chronic', '~> 0.10.2'
 gem 'icalendar', '~> 2.3'
 gem 'tzinfo'
 
 group :development do
   gem 'reek'
-  gem 'rubocop', '~> 0.85.0'
+  gem 'rubocop', '~> 0.83.0'
   gem 'solargraph'
 end
