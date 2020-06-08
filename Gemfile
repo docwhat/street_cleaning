@@ -14,7 +14,6 @@ source 'https://rubygems.org/'
 
 ruby detect_ruby_version
 
-gem 'activesupport', '~> 6.0.0'
 gem 'chronic', '~> 0.10.2'
 gem 'icalendar', '~> 2.3'
 gem 'tzinfo'
