@@ -1,4 +1,5 @@
 /.bundle/
+/vendor/
 /tags
 *.ics
 .ruby-version
