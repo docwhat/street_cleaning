@@ -30,7 +30,7 @@ GEM
     reverse_markdown (2.0.0)
       nokogiri
     rexml (3.2.4)
-    rubocop (0.87.0)
+    rubocop (0.88.0)
       parallel (~> 1.10)
       parser (>= 2.7.1.1)
       rainbow (>= 2.2.2, < 4.0)
@@ -70,7 +70,7 @@ DEPENDENCIES
   chronic (~> 0.10.2)
   icalendar (~> 2.3)
   reek
-  rubocop (~> 0.87.0)
+  rubocop (~> 0.88.0)
   solargraph
   tzinfo
 
