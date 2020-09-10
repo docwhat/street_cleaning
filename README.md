@@ -1,8 +1,12 @@
-[![Build Status](https://travis-ci.org/docwhat/street_cleaning.svg?branch=master)](https://travis-ci.org/docwhat/street_cleaning) [![](https://images.microbadger.com/badges/image/docwhat/street_cleaning.svg)](https://microbadger.com/images/docwhat/street_cleaning "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/docwhat/street_cleaning.svg)](https://microbadger.com/images/docwhat/street_cleaning "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/docwhat/street_cleaning.svg)](https://microbadger.com/images/docwhat/street_cleaning "Get your own commit badge on microbadger.com")
 
 ## Street Cleaning
 
-An `.ics` generator for the street cleaning schedule around my house.
+> An `.ics` generator for the street cleaning schedule around my house.
+
+<pre>
+![Lint Code Base](https://github.com/docwhat/street_cleaning/workflows/Lint%20Code%20Base/badge.svg)
+![CI](https://github.com/docwhat/street_cleaning/workflows/CI/badge.svg)
+</pre>
 
 ## Validation of the .ics
 
