@@ -17,7 +17,7 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     parallel (1.19.2)
-    parser (2.7.1.5)
+    parser (2.7.2.0)
       ast (~> 2.4.1)
     psych (3.1.0)
     rainbow (3.0.0)
@@ -26,20 +26,20 @@ GEM
       parser (>= 2.5.0.0, < 2.8, != 2.5.1.1)
       psych (~> 3.1.0)
       rainbow (>= 2.0, < 4.0)
-    regexp_parser (1.8.0)
+    regexp_parser (1.8.1)
     reverse_markdown (2.0.0)
       nokogiri
     rexml (3.2.4)
-    rubocop (0.92.0)
+    rubocop (0.93.0)
       parallel (~> 1.10)
       parser (>= 2.7.1.5)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 1.7)
+      regexp_parser (>= 1.8)
       rexml
-      rubocop-ast (>= 0.5.0)
+      rubocop-ast (>= 0.6.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-ast (0.5.0)
+    rubocop-ast (0.7.1)
       parser (>= 2.7.1.5)
     ruby-progressbar (1.10.1)
     solargraph (0.39.8)
@@ -70,7 +70,7 @@ DEPENDENCIES
   chronic (~> 0.10.2)
   icalendar (~> 2.3)
   reek
-  rubocop (~> 0.92.0)
+  rubocop (~> 0.93.0)
   solargraph
   tzinfo
 
