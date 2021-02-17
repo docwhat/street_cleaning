@@ -43,7 +43,7 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: docker://github/super-linter:v3@sha256:f8e1f61a7f50e0404aaf758fdf33a0001d25c3629026c949938493c60ad2a9ac
+        uses: docker://github/super-linter:v3@sha256:ecd92f03f0cfe28e590f6e9759a84eaf665ae67653d01ce52aa8e46d345d3bd1
         env:
           DISABLE_ERRORS: "true"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
