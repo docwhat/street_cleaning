@@ -1,4 +1,4 @@
-FROM ruby:2.7 AS ruby
+FROM ruby:3.0 AS ruby
 
 ##
 ##
