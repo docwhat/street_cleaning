@@ -1,19 +1,16 @@
 version: 2
 updates:
 
-  # .github/workflows/*
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
 
-  # go.mod
-  - package-ecosystem: "gomod"
+  - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "daily"
 
-  # Dockerfiles
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
