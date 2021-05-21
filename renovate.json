@@ -1,7 +1,0 @@
-{
-  "extends": [
-    "config:base",
-    ":automergeAll"
-  ],
-  "timezone": "America/New_York"
-}
