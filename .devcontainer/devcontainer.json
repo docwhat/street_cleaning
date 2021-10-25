@@ -1,11 +1,17 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.106.0/containers/ruby-2
 {
-  "name": "Ruby 2",
+  "name": "Ruby 3",
   "dockerFile": "Dockerfile",
   // Set *default* container specific settings.json values on container create.
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.profiles.linux": {
+      "bash (login)": {
+        "path": "bash",
+        "args": ["-l"]
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
     "ruby.useBundler": true,
     "ruby.useLanguageServer": true,
     "ruby.lint": {
@@ -20,10 +26,11 @@
   },
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
-	"rebornix.Ruby",
-	"exiasr.hadolint",
-	"kaiwood.endwise"
-],
+    "rebornix.Ruby",
+    "exiasr.hadolint",
+    "kaiwood.endwise",
+    "esbenp.prettier-vscode"
+  ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
