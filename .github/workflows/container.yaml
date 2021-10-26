@@ -23,7 +23,7 @@
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ghcr.io/${{github.repository_owner}}/${{github.repository}}
+          images: ghcr.io/${{github.repository}}
           tags: |
             type=sha
           flavor: |
