@@ -10,6 +10,6 @@ gem 'tzinfo'
 
 group :development do
   gem 'reek'
-  gem 'rubocop', '~> 1.24.1'
+  gem 'rubocop', '~> 1.56.0'
   gem 'solargraph'
 end
