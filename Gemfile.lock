@@ -8,7 +8,7 @@ GEM
     concurrent-ruby (1.2.2)
     diff-lcs (1.5.0)
     e2mmap (0.1.0)
-    icalendar (2.8.0)
+    icalendar (2.9.0)
       ice_cube (~> 0.16)
     ice_cube (0.16.4)
     jaro_winkler (1.5.6)
@@ -74,7 +74,7 @@ PLATFORMS
 
 DEPENDENCIES
   chronic (~> 0.10.2)
-  icalendar (~> 2.8)
+  icalendar (~> 2.9)
   reek
   rubocop (~> 1.24.1)
   solargraph
