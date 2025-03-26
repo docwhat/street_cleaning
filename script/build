@@ -9,15 +9,13 @@ top_dir="$(git rev-parse --show-toplevel)"
 repo_url="$(git ls-remote --get-url)"
 branch="$(git rev-parse --abbrev-ref HEAD)"
 gitsha=${GIT_SHA1:-$(git rev-parse HEAD)}
-gitcommit=${GIT_COMMIT:-$(git log -1 --oneline --decorate)}
 
 declare -r \
   build_date \
   top_dir \
   repo_url \
   branch \
-  gitsha \
-  gitcommit
+  gitsha
 
 cat <<INFO
 On ${build_date}
@@ -29,6 +27,7 @@ INFO
 declare -ra docker_build_args=(
   "--target=release"
   "--tag=${tag}"
+  "--load"
   "--pull"
   "--label=maintainer=Christian Höltje <https://docwhat.org>"
   "--label=org.label-schema.name=${name}"
@@ -40,6 +39,6 @@ declare -ra docker_build_args=(
   "${top_dir}"
 )
 
-docker build "${docker_build_args[@]}"
+docker buildx build "${docker_build_args[@]}"
 
 # EOF
